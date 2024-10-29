@@ -1,48 +1,61 @@
 package org.example.ListExamples;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayListDemo {
-
-    /*
-    A forward: when to use an Array or ArrayList?
-
-    Arrays must be declared/initialized with a value as they are immutable. Arrays are not part of the Collection framework
-    Arrays can hold anything (primitives like int, long, bool, but can also hold objects)
-       String[] friendsArray = new String[5]; //Here is an example of declaration with size allocation (which is mandatory)
-       friendsArray[0] = "Bob"; //Here is an example of assignment after declaration
-
-       String[] friendArray2 = {"Bob", "Carl", "Dave", "Earl", "Frank"}; //Here is an example of initialization
-
-   When/why would we use an ArrayList over an Array?
-   ArrayLists don't have a fixed size so no size must be specified. They auto-resize
-   ArrayLists can only hold objects (no primitives) but you can get around this by using wrapper classes, e.g., Int instead of int.
-
-   ArrayList<String> friendsArrayList = new ArrayList<>(); //Declaration
-   friendsArrayList.add("Bob"); //Assignment after declaration
-   friendsArrayList.addAll(Arrays.asList("Carl","Dave","Earl"));
-
-   ArrayList<String> friendsArrayList2 = new ArrayList<>(Arrays.asList("Bob", "Carl", "Dave", "Earl", "Frank")); //Initialization
-    */
-
+    ArrayList<Object> friendsArrayList = new ArrayList<>(Arrays.asList(
+            "Anastasia",
+            "Andre",
+            "Andrew",
+            "Castro",
+            "Dean",
+            "Jake",
+            "Leon",
+            "Nez"
+    ));
 
     public static void main(String[] args) {
-        ArrayList<String> friendsArrayList = new ArrayList<>(Arrays.asList("Nastya", "Leon", "Andrew", "Nez"));
+/**
+        ArrayList<String> friendsArrayList = new ArrayList<>(Arrays.asList("Bob", "Carl", "Dave", "Earl"));
         System.out.println(friendsArrayList);
         System.out.println(friendsArrayList.get(0) + " is the 0th element in the ArrayList");
         System.out.println("The size of the ArrayList is " + friendsArrayList.size());
+**/
+        ArrayListDemo demo = new ArrayListDemo();
+        printArrayList(demo.friendsArrayList);
+        demo.addToArrayList(demo.friendsArrayList, "Test");
+        demo.addToArrayList(demo.friendsArrayList, 10);
+        demo.addToArrayList(demo.friendsArrayList, 5.7777);
+        printArrayList(demo.friendsArrayList);
+        demo.printElementType(demo.friendsArrayList);
+//        demo.clearList(demo.friendsArrayList);
+//        System.out.println("Clearing ArrayList...");
+        demo.replaceAll(demo.friendsArrayList, "Dean");
+        printArrayList(demo.friendsArrayList);
+
     }
 
+    public static void printArrayList(ArrayList someArray){
+        System.out.println(someArray);
+    }
 
+    public static void printElementType(ArrayList someArray){
+        for(Object element: someArray){
+            System.out.println("Element " + element + " is of type: " + element.getClass().getSimpleName());
+        }
+    }
 
+    public <T>  void addToArrayList(ArrayList<Object> list, T element){
+        list.add(element);
+    }
 
+    public <T> void clearList(ArrayList<Object> list){
+        list.clear();
+    }
 
-
-
-
-
+    public <T> void replaceAll(ArrayList<Object> list, T element){
+        list.replaceAll(e -> element); //same as saying: For each element 'e' in the list, replace with 'element'
+    }
 
 }
