@@ -29,10 +29,13 @@ public class ArrayListDemo {
         demo.addToArrayList(demo.friendsArrayList, 5.7777);
         printArrayList(demo.friendsArrayList);
         demo.printElementType(demo.friendsArrayList);
-//        demo.clearList(demo.friendsArrayList);
-//        System.out.println("Clearing ArrayList...");
         demo.replaceAll(demo.friendsArrayList, "Dean");
         printArrayList(demo.friendsArrayList);
+        demo.clearList(demo.friendsArrayList);
+        System.out.println("Clearing ArrayList...");
+        printArrayList(demo.friendsArrayList);
+        System.out.println("The size of the ArrayList is " + demo.friendsArrayList.size());
+
 
     }
 
