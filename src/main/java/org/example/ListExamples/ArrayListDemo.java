@@ -1,28 +1,33 @@
 package org.example.ListExamples;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+public class ArrayListDemo {
 
-public class ArrayListDemo extends AbstractArrayListOperations<String>{
+    // Composition: Use AbstractArrayListOperations as a field instead of inheritance
+    private final AbstractArrayListOperations<String> operations;
+
+    public ArrayListDemo() {
+        // Instantiate AbstractArrayListOperations with an anonymous class
+        this.operations = new AbstractArrayListOperations<String>() {};
+    }
+
     public static void main(String[] args) {
         ArrayListDemo demo = new ArrayListDemo();
         demo.runDemo();
-
     }
 
-    public void runDemo(){
-        printArrayList();
-        addToArrayList("Test");
-        addToArrayList("10");
-        addToArrayList("5.7777");
-        printArrayList();
-        printElementType();
-        replaceAll("Dean");
-        printArrayList();
-        clearList();
+    public void runDemo() {
+        // Delegate calls to the operations instance
+        operations.printArrayList();
+        operations.addToArrayList("Test");
+        operations.addToArrayList("10");
+        operations.addToArrayList("5.7777");
+        operations.printArrayList();
+        operations.printElementType();
+        operations.replaceAll("Dean");
+        operations.printArrayList();
+        operations.clearList();
         System.out.println("Clearing ArrayList...");
-        printArrayList();
-        System.out.println("The size of the ArrayList is " + friendsArrayList.size());
+        operations.printArrayList();
+        System.out.println("The size of the ArrayList is " + operations.getList().size());
     }
-
 }
