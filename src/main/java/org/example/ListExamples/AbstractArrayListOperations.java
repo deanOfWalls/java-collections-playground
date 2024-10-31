@@ -22,4 +22,9 @@ public abstract class AbstractArrayListOperations<T> implements ArrayListOperati
         ));
 
     }
+
+    @Override
+    public ArrayList<T> getList(){
+        return friendsArrayList;
+    }
 }

@@ -11,17 +11,17 @@ public class ArrayListDemo extends AbstractArrayListOperations<String>{
     }
 
     public void runDemo(){
-        printArrayList(friendsArrayList);
-        addToArrayList(friendsArrayList, "Test");
-        addToArrayList(friendsArrayList, "10");
-        addToArrayList(friendsArrayList, "5.7777");
-        printArrayList(friendsArrayList);
+        printArrayList();
+        addToArrayList("Test");
+        addToArrayList("10");
+        addToArrayList("5.7777");
+        printArrayList();
         printElementType(friendsArrayList);
-        replaceAll(friendsArrayList, "Dean");
-        printArrayList(friendsArrayList);
-        clearList(friendsArrayList);
+        replaceAll("Dean");
+        printArrayList();
+        clearList();
         System.out.println("Clearing ArrayList...");
-        printArrayList(friendsArrayList);
+        printArrayList();
         System.out.println("The size of the ArrayList is " + friendsArrayList.size());
     }
 
