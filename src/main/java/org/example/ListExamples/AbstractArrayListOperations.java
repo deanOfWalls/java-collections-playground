@@ -3,10 +3,11 @@ package org.example.ListExamples;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public abstract class AbstractArrayListOperations<T> implements ArrayListOperations<T> {
 
-    protected ArrayList<T> friendsArrayList;
+    protected List<T> friendsArrayList;
 
     public AbstractArrayListOperations() {
         //Constructor to initialize friendsArrayList
@@ -24,7 +25,7 @@ public abstract class AbstractArrayListOperations<T> implements ArrayListOperati
     }
 
     @Override
-    public ArrayList<T> getList(){
+    public List<T> getList(){
         return friendsArrayList;
     }
 }

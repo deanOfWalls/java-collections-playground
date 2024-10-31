@@ -16,7 +16,7 @@ public class ArrayListDemo extends AbstractArrayListOperations<String>{
         addToArrayList("10");
         addToArrayList("5.7777");
         printArrayList();
-        printElementType(friendsArrayList);
+        printElementType();
         replaceAll("Dean");
         printArrayList();
         clearList();
